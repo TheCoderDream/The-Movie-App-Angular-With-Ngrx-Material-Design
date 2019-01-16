@@ -1,0 +1,37 @@
+.row {
+  margin-bottom: 0;
+}
+.case_study {
+  text-align: center;
+}
+
+.add_new {
+  text-align: right;
+}
+
+mat-toolbar {
+  margin-bottom: 4rem;
+}
+
+mat-radio-group .mat-menu-panel {
+  overflow: hidden;
+}
+
+.type_select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__text {
+
+  }
+
+  &__option {
+
+  }
+}
+
+
+.mat-menu-panel ng-trigger ng-trigger-transformMenu  mat-menu-after mat-menu-below mat-elevation-z4 {
+  overflow: hidden !important;
+}

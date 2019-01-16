@@ -1,0 +1,25 @@
+<ul class="pagination" *ngIf="totalItemsCount > 0">
+  <li class="waves-effect" >
+    <button
+      class="btn-flat"
+      (click)="onPrev()"
+      [disabled]="currentPage === 1">
+      <i class="material-icons">chevron_left</i>
+    </button>
+  </li>
+  <li
+    *ngFor="let pageNum of getPages()"
+    [class.active]="pageNum === currentPage"
+    (click)="onPage(pageNum)"
+    class="waves-effect" ><a >{{pageNum}}</a></li>
+  <li
+    class="waves-effect"
+
+  ><button
+    class="btn-flat"
+    [disabled]="isOnLastPage()"
+    (click)="onNext()"
+    ><i class="material-icons">chevron_right</i></button></li>
+</ul>
+
+

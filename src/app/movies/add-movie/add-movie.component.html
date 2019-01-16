@@ -1,0 +1,30 @@
+<app-header>
+  <div class="custom-header-menu">
+    <button
+      routerLink="/movies"
+      mat-raised-button color="primary"><mat-icon>chevron_left</mat-icon> Yeni Ekle</button>
+  </div>
+</app-header>
+<div class="container">
+  <form #movieAddForm="ngForm" (submit)="onAddMovie(movieAddForm)">
+    <div class="form-field">
+      <mat-radio-group name="movieType" required ngModel>
+        <mat-radio-button [value]="MovieTypes.FILM" style="margin-right: 2rem;">Film</mat-radio-button>
+        <mat-radio-button [value]="MovieTypes.TV_SERIES">Dizi</mat-radio-button>
+      </mat-radio-group>
+      <input type="text"
+             name="movieTitle"
+             required
+             ngModel
+             matInput placeholder="{{ 'Film / Dizi Adı'}}"
+             >
+      <input type="number"
+             ngModel
+             min="0"
+             max="10"
+             matInput placeholder="{{ 'Puanı'}}"
+             required name="movieRate">
+      <button mat-raised-button color="primary" [disabled]="movieAddForm.invalid">Kaydet</button>
+    </div>
+  </form>
+</div>

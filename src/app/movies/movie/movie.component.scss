@@ -1,0 +1,27 @@
+.rate_movie {
+  text-align: right;
+}
+
+.rate {
+  text-align: center;
+
+  &__point {
+    vertical-align: super;
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+}
+
+
+.rate_movie {
+  &__buttons {
+    mat-icon {
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+
+  &__text {
+    font-size: 1rem;
+  }
+}

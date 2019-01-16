@@ -1,0 +1,25 @@
+.dialog-wrapper {
+  padding: 4rem;
+  text-align: center;
+
+  .delete-icon-wrapper {
+
+    mat-icon {
+      font-size: 9rem;
+      margin-bottom: 2rem;
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+
+
+  .dialog-text {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .dialog-buttons {
+    justify-content: center;
+    text-align: center;
+  }
+}

@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import './styles/material-theme';
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.cst-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+
+}
+.mat-menu-panel {
+  overflow: hidden !important;
+}
+

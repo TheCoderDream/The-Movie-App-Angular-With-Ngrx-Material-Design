@@ -1,0 +1,24 @@
+<div class="theme-selector" [@opener]="state">
+  <div
+    (click)="onToggle()"
+    class="theme-selector__opener">
+    <mat-icon>settings</mat-icon>
+  </div>
+
+  <div
+    class="theme-selector-wrapper">
+    <div class="theme-selector__text">
+      <p>Tema Rengini Seçiniz</p>
+    </div>
+    <div class="theme-selector__options">
+      <mat-radio-group (change)="onChangeTheme($event.value)"  >
+        <mat-radio-button  [disableRipple]="true" color="primary" [value]="themeTypes.GRAY" >
+        </mat-radio-button>
+        <mat-radio-button  color="accent" [value]="themeTypes.BROWN" >
+        </mat-radio-button>
+        <mat-radio-button    color="warn" [value]="themeTypes.AQUA" >
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+</div>

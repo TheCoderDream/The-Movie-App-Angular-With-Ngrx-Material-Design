@@ -1,0 +1,72 @@
+<app-header>
+  <div class="custom-header-menu">
+    <button style="margin-right: 4rem;" mat-raised-button color="primary" [matMenuTriggerFor]="byType">Türler
+      <mat-icon>expand_more</mat-icon>
+    </button>
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="byPoint">Sırala
+      <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #byType="matMenu">
+      <mat-radio-group (change)="changeShorting($event.value, 'type')">
+        <div class="type_select" mat-menu-item>
+          <div class="type_select__text">Tümü</div>
+          <div class="type_select__option">
+            <mat-radio-button [value]="MovieTypes.ALL"></mat-radio-button>
+          </div>
+        </div>
+        <div class="type_select" mat-menu-item>
+          <div class="type_select__text">Filmler</div>
+          <div class="type_select__option">
+            <mat-radio-button [value]="MovieTypes.FILM"></mat-radio-button>
+          </div>
+        </div>
+        <div class="type_select" mat-menu-item>
+          <div class="type_select__text">Diziler</div>
+          <div class="type_select__option">
+            <mat-radio-button [value]="MovieTypes.TV_SERIES"></mat-radio-button>
+          </div>
+        </div>
+      </mat-radio-group>
+    </mat-menu>
+
+    <mat-menu #byPoint="matMenu">
+      <mat-radio-group (change)="changeShorting($event.value, 'sorting')">
+        <div class="type_select" mat-menu-item>
+          <div class="type_select__text">Puana göre(artan)</div>
+          <div class="type_select__option">
+            <mat-radio-button [value]="SortingTypes.ASC"></mat-radio-button>
+          </div>
+        </div>
+        <div class="type_select" mat-menu-item>
+          <div class="type_select__text">Puana göre(azalan)</div>
+          <div class="type_select__option">
+            <mat-radio-button [value]="SortingTypes.DESC"></mat-radio-button>
+          </div>
+        </div>
+      </mat-radio-group>
+    </mat-menu>
+  </div>
+</app-header>
+<div class="container">
+  <ng-container #outlet></ng-container>
+  <ng-template #content>
+    <app-movie
+      style="display: block"
+      *ngFor="let movie of (movieListState | async ).movies | movieSort: sorting | pagination: {perPage: 7, currentPage: page}"
+      [movie]="movie"
+    >
+    </app-movie>
+  </ng-template>
+  <div class="container" style="text-align: center">
+    <app-pagination
+      (goPage)="goToPage($event)"
+      (next)="next($event)"
+      (prev)="prev($event)"
+      [pagesToShow]="3"
+      [currentPage]="page"
+      [perPage]="7"
+      [totalItemsCount]="(movieListState | async ).movies.length"></app-pagination>
+  </div>
+</div>
+
+

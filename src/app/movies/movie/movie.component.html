@@ -1,0 +1,20 @@
+<mat-card style="margin-bottom: 2rem" >
+  <div class="row" (mouseenter)="onActivate()" (mouseleave)="onDeactivate()">
+    <div class="col s4"><span>{{movie.title}} ({{movie.year}}) <i (click)="onRemoveMovie()" style="cursor: pointer; color: red;" class="material-icons" [@activate]="deleteButtonState">delete_forever</i></span></div>
+    <div class="col s4"><div class="rate"><mat-icon style="color: #ff7c1c;">star</mat-icon><span class="rate__point">{{movie.rate}}</span></div></div>
+    <div class="col s4">
+      <div class="rate_movie">
+        <div class="rate_movie__text">Puan Ver</div>
+        <div class="rate_movie__buttons">
+          <mat-icon
+            (click)="incrementByOne()"
+            [color]="'primary'">arrow_drop_up</mat-icon>
+          <mat-icon
+            (click)="decrementByOne()"
+            [color]="'warn'">arrow_drop_down</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
+

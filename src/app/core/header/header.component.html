@@ -1,0 +1,14 @@
+<mat-toolbar >
+  <div class="container">
+    <div class="row" style="width: 100%">
+      <div class="col s4">
+        <ng-content select=".custom-header-menu"></ng-content>
+      </div>
+      <div class="col s4 case_study">Case Study</div>
+      <div class="col s4 add_new"><button
+        routerLink="/add-new-movie"
+        mat-raised-button color="primary"><mat-icon>add</mat-icon> Yeni Ekle</button></div>
+    </div>
+  </div>
+</mat-toolbar>
+
