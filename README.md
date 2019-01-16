@@ -1,3 +1,5 @@
+![alt text](https://github.com/TheCodersDream/The-Movie-App-Angular-With-Ngrx-Material-Design/blob/master/angularStudyApp.gif)
+
 # StudyCase
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
